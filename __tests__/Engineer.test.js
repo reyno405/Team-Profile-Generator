@@ -1,31 +1,23 @@
+// using Engineer constructor 
 const Engineer = require('../lib/Engineer');
 
-// name, email, id, role and github user name validation for engineer
+// creating engineer object  
+test('creates an Engineer object', () => {
+    const engineer = new Engineer('Nicole', 90, 'nicole.elisaw@gmail', 'nicolewallace09');
+    
+    expect(engineer.github) .toEqual(expect.any(String));
+});
 
-describe("Engineer", () => {
-    describe("has a name", () => {
-        it("has a name", () => {
-            
-            const engineerTest = new Engineer("John Doe", "joghn@gmail.com", 2, "Engineer");
+// gets github from getGithub()
+test('gets engineer github value', () => {
+    const engineer = new Engineer('Nicole', 90, 'nicole.elisaw@gmail', 'nicolewallace09');
 
-            expect(engineerTest.name).toEqual("John Doe");
-            expect(engineerTest.name.length).toBeGreaterThan(2);
-        });
+    expect(engineer.getGithub()).toEqual(expect.stringContaining(engineer.github.toString()));
+});
 
-        it("has an Email", () => {
-            expect(engineerTest.email).toEqual(expect.stringContaining('@'))
-        });
+// gets role from getRole() 
+test('gets role of employee', () => {
+    const engineer = new Engineer('Nicole', 90, 'nicole.elisaw@gmail', 'nicolewallace09');
 
-        it("has a id that is a num", () => {
-            expect(engineerTest.id).toEqual(expect.any(Number))
-        });
-
-        it("has a role of engineer", () => {
-            expect(engineerTest.role).toBe("engineerTest")
-        });
-
-
-        
-
-    });
+    expect(engineer.getRole()).toEqual("Engineer");
 });

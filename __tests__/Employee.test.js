@@ -1,28 +1,39 @@
-const Employee = require("../lib/Employee");
+// using Employee constructor 
+const Employee = require('../lib/Employee');
 
-// name, email, id, role validation
+// creates employee object 
+test('creates an employee object', () => {
+    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
 
-
-describe("Employee", () => {
-    describe("has a name", () => {
-        it("has a name", () => {
-            const employee = new Employee("John Doe", "joghn@gmail.com", 3);
-
-            expect(employee.name).toEqual("John Doe");
-            expect(employee.name.length).toBeGreaterThan(2);
-        });
-
-        it("has an Email", () => {
-            expect(employee.email).toEqual(expect.stringContaining('@'))
-        });
-
-        it("has a id that is a num", () => {
-            expect(employee.id).toEqual(expect.any(Number))
-        });
-
-        it("has a role of employee", () => {
-            expect(employee.role).toBe("employee")
-        });
-
-    });
+    expect(employee.name).toEqual(expect.any(String));
+    expect(employee.id).toEqual(expect.any(Number));
+    expect(employee.email).toEqual(expect.any(String));
 });
+
+// gets id from getId() 
+test('gets employee name', () => {
+    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
+
+    expect(employee.getName()).toEqual(expect.any(String));
+});
+
+// gets id from getId() 
+test('gets employee ID', () => {
+    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
+
+    expect(employee.getId()).toEqual(expect.any(Number));
+});
+
+// gets emails from getEmail()
+test('gets employee email', () => {
+    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
+
+    expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));
+});
+
+// gets role from getRole()
+test('gets role of employee', () => {
+    const employee = new Employee('Nicole', 90, 'nicole.elisaw@gmail.com');
+
+    expect(employee.getRole()).toEqual("Employee");
+}); 
