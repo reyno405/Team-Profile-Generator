@@ -11,8 +11,28 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar{
+.navbar {
     background-color: var(--primary);
-    color:var(--secondary);
+    color: var(--secondary);
     font-size: 50px;
+}
+
+.navbar-brand{
+    font-size: 50px;
+}
+
+.car-body{
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.card-header {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.container{
+    margin: 100px auto;
+    justify-content: space-evenly;
+    display: flex;
 }
