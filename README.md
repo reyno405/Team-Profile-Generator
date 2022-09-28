@@ -1,6 +1,8 @@
 # Team-Profile-Generator
 
-Command line application that takes in information about employees on a software engineering team, then generate an HTML webpage that dispalys summaries for each person. Testing is key to make code maintainable, so 
+Command line application that takes in information about employees on a software engineering team, then generate 
+
+an HTML webpage that dispalys summaries for each person. Testing is key to make code maintainable, so 
 
 unit testing foa all part of code and ensuring it passes each test.
 
